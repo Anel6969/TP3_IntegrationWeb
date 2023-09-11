@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <meta name="description" content="Centre TS inc">
+    <meta name="theme-color" content="rgb(233, 233, 233)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="description" content="L'allié de travailleurs">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style/css/normalize.css">
+    <link rel="stylesheet" href="style/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script/script.js" defer></script>
+    <title>Centre TS , L"allié de travailleurs</title>
+</head>
+
+<body>
+    <header>
+
+
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="index.html" class="flex items-center">
+                    <img src="/images/logo.png" class="h-8 mr-3" alt="Centre TS inc" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Centre TS</span>
+                </a>
+                <div class="flex md:order-2">
+                    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                        aria-expanded="false"
+                        class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                    <div class="relative hidden md:block">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search icon</span>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <button data-collapse-toggle="navbar-search" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-search" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                    <div class="relative mt-3 md:hidden">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-clifford md:p-0 md:hover:text-clifford dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                aria-current="page">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="zoneclient.html"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-clifford md:p-0 md:hover:text-clifford dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Zone
+                                Client</a>
+                        </li>
+                        <li>
+                            <a href="aproposnous.html"
+                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-clifford
+                                 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">À
+                                propos nous</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main>
+        <!-- Caroussel -->
+        <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-64 overflow-hidden rounded-lg md:h-96">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/images/shutterstock_1647660442.jpg"
+                        class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/images/shutterstock_1732967150.jpg"" class=" absolute block w-full -translate-x-1/2
+                        -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="/images/shutterstock_397846903.jpg"" class=" absolute block w-full -translate-x-1/2
+                        -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                    data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                    data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                    data-carousel-slide-to="2"></button>
+
+            </div>
+            <!-- Slider controls -->
+            <button type="button"
+                class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 1 1 5l4 4" />
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button"
+                class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next>
+                <span
+                    class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 9 4-4-4-4" />
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Separateur -->
+        <section>
+            <div class="relative flex py-10 items-center">
+                <div class="flex-grow border-t border-gray-400"></div>
+                <span class="flex-shrink mx-4 text-gray-400">↓↓↓ </span>
+                <div class="flex-grow border-t border-gray-400"></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="grid grid-cols-2 sm:grid-cols-12 md:grid-cols-12 xl:grid-cols-12 grid-rows-1 gap-4">
+                <div class="col-start-4 col-end-6 row-start-1">
+                    <h2 class="text-4xl">Pour quoi Centre TS.</h2>
+                    <p class="p-4">
+                        Choisir notre entreprise, c'est opter pour une expertise éprouvée et un engagement envers
+                        l'excellence. Notre équipe dédiée travaille sans relâche pour offrir des solutions innovantes
+                        qui
+                        répondent parfaitement à vos besoins. Avec une approche axée sur la qualité, le service client
+                        et la
+                        durabilité, nous sommes votre partenaire idéal pour atteindre vos objectifs commerciaux.
+                    </p>
+                </div>
+                <div class="col-start-7 col-end-8 row-start-1">
+                    <div class="monForm">
+                        <form class="login-form" action="confirmation.html" method="get"
+                            onsubmit="return validationForm()" novalidate>
+                            <!-- Utilisez des balises <label> pour chaque champ de formulaire -->
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" id="nom" name="nom" class="form-control" required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prenom">Prenom</label>
+                                <input type="text" id="prenom" name="prenom" class="form-control" required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="numeroTel">Numéro de téléphone</label>
+                                <input type="tel" id="numeroTel" name="numeroTel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    class="form-control" required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Votre email</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="entreprise">Nom de l'entreprise</label>
+                                <input type="text" id="entreprise" name="entreprise" class="form-control" required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="typeEntreprise">Type d'entreprise</label>
+                                <input type="text" id="typeEntreprise" name="typeEntreprise" class="form-control"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nombreEmployes">Nombre d'employes</label>
+                                <input type="number" id="nombreEmployes" name="nombreEmployes" class="form-control"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetAnnuel">Budget annuel</label>
+                                <input type="number" id="budgetAnnuel" name="budgetAnnuel" class="form-control"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+
+                            <button type="submit" class="btn">Soumettre</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separateur -->
+        <section>
+            <div class="relative flex py-10 items-center">
+                <div class="flex-grow border-t border-gray-400"></div>
+                <span class="flex-shrink mx-4 text-gray-400">↓↓↓ </span>
+                <div class="flex-grow border-t border-gray-400"></div>
+            </div>
+        </section>
+        <section>
+
+            <!-- PLUSIEURS MAGASIN  -->
+
+            <section class="relative bg-[url(images/store.jpg)] bg-cover bg-center bg-no-repeat">
+                <div
+                    class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l">
+                </div>
+
+                <div
+                    class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+                    <div class="bg-gray-100 text-center ltr:sm:text-left rtl:sm:text-right">
+                        <h1 class="text-3xl font-extrabold sm:text-5xl">
+                            Plusieurs magasins
+
+                            <strong class="block font-extrabold text-gray-900">
+                                Pour mieux vous servir.
+                            </strong>
+                        </h1>
+
+                        <p class="mt-4 max-w-lg sm:text-xl/relaxed">
+                            Choisissez parmi nos multiples magasins pour une expérience de shopping inégalée. Votre
+                            satisfaction, notre priorité.
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap gap-4 text-center">
+                            <a href="#"
+                                class="block w-full rounded bg-clifford px-12 py-3 text-sm font-medium text-white shadow hover:bg-black focus:outline-none focus:ring  sm:w-auto">
+                                Où nous trouver ?
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONSEIL DE PRO -->
+
+            <section>
+
+                <div class="grid grid-cols-12 grid-rows-2 gap-3 bg-gray-700 p-11">
+                    <div class="col-span-6 col-start-4">
+                        <h1 class="text-5xl md:flex-row font-bold  text-center pl-18">Conseils de PRO</h1>
+                    </div>
+                    <div class="col-start-5 col-end-9 text-center">
+                        <p class="text-white">
+                            Priorisez les tâches essentielles. Communiquez clairement. Apprenez des erreurs. Soyez
+                            adaptable. Restez concentré.
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-3 ">
+                    <div class="col-start-4 col-end-10 ">
+
+                        <div id="accordion-arrow-icon" data-accordion="open">
+                            <h2 id="accordion-arrow-icon-heading-1">
+                                <button type="button"
+                                    class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-900 bg-gray-100 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                    data-accordion-target="#accordion-arrow-icon-body-1" aria-expanded="true"
+                                    aria-controls="accordion-arrow-icon-body-1">
+                                    <span>Pour quoi utiliser des vêtements de protection ?</span>
+                                </button>
+                            </h2>
+                            <div id="accordion-arrow-icon-body-1" aria-labelledby="accordion-arrow-icon-heading-1">
+                                <div
+                                    class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les vêtements de protection sont
+                                        utilisés pour prévenir les risques et les dangers dans divers environnements
+                                        professionnels. Ils offrent une barrière contre les produits chimiques, les
+                                        flammes, les particules dangereuses, les températures extrêmes et autres menaces
+                                        potentielles. Ils sauvegardent la sécurité, réduisent les blessures et
+                                        garantissent un environnement de travail plus sûr.</p>
+                                </div>
+                            </div>
+                            <h2 id="accordion-arrow-icon-heading-2">
+                                <button type="button"
+                                    class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                    data-accordion-target="#accordion-arrow-icon-body-2" aria-expanded="false"
+                                    aria-controls="accordion-arrow-icon-body-2">
+                                    <span>Comment bien choisir le bon vêtement de travail ?</span>
+                                    <svg class="w-4 h-4 shrink-0 -mr-0.5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="accordion-arrow-icon-body-2" class="hidden"
+                                aria-labelledby="accordion-arrow-icon-heading-2">
+                                <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                                    <p class="mb-2 text-gray-500 dark:text-gray-400">Choisir les vêtements de travail
+                                        adéquats requiert considération. Alliez confort et sécurité selon votre domaine.
+                                        Respectez les normes, privilégiez durabilité et fonctionnalité. Optez pour des
+                                        coupes bien ajustées, favorisant liberté de mouvement. Recherchez des matériaux
+                                        adaptés aux exigences tout en reflétant le professionnalisme nécessaire.</p>
+
+                                </div>
+                            </div>
+                            <h2 id="accordion-arrow-icon-heading-3">
+                                <button type="button"
+                                    class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                    data-accordion-target="#accordion-arrow-icon-body-3" aria-expanded="false"
+                                    aria-controls="accordion-arrow-icon-body-3">
+                                    <span>C'est quoi l'importance des bottes de sécurité ?</span>
+                                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M9 5 5 1 1 5" />
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="accordion-arrow-icon-body-3" class="hidden"
+                                aria-labelledby="accordion-arrow-icon-heading-3">
+                                <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                                    <p class="mb-2 text-gray-500 dark:text-gray-400">Les bottes de sécurité revêtent une
+                                        importance cruciale dans de nombreux environnements professionnels. Elles
+                                        offrent une protection contre les chutes d'objets lourds, les écrasements, les
+                                        produits chimiques et les risques électriques. Leur conception robuste et leurs
+                                        caractéristiques spéciales, telles que les embouts renforcés et les semelles
+                                        antidérapantes, minimisent les risques de blessures aux pieds. Les bottes de
+                                        sécurité contribuent ainsi à garantir la santé et la sécurité des travailleurs,
+                                        favorisant un environnement de travail plus sécurisé et productif.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <footer>
+
+                <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+                    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+                        <div class="sm:flex sm:items-center sm:justify-between">
+                            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                                <img src="/images/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
+                                <span
+                                    class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Centre
+                                    TS</span>
+                            </a>
+                            <ul
+                                class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                                <li>
+                                    <a href="index.html" class="mr-4 hover:underline md:mr-6 ">Accueil</a>
+                                </li>
+                                <li>
+                                    <a href="zoneclient.html" class="mr-4 hover:underline md:mr-6">Zone Client</a>
+                                </li>
+                                <li>
+                                    <a href="aproposnous.html" class="mr-4 hover:underline md:mr-6 ">À propos nous</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                                href="index.html" class="hover:underline">Centre TS™</a>. All Rights Reserved. Technique
+                            d’intégration des interfaces Web 2 TP3 Anel Grebovic</span>
+                    </div>
+                </footer>
+
+
+            </footer>
+    </main>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+
+</body>

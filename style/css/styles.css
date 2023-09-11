@@ -1,0 +1,68 @@
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FDB714;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  color: #FDB714;
+}
+
+p {
+  fant-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #05022e;
+}
+
+body {
+  background-color: rgb(233, 233, 233);
+}
+
+.monForm {
+  justify-content: space-around;
+  display: flex;
+  width: 400px;
+}
+
+.form-group input {
+  border: 2px solid beige;
+  border-radius: 4px;
+  display: block;
+  font-size: 12px;
+  padding: 10px;
+  width: 400px;
+}
+.form-group input:focus {
+  outline: 0;
+}
+.form-group .errorMessage {
+  color: red;
+  font-size: 14px;
+}
+
+.form-group.success input {
+  border-color: greenyellow;
+}
+
+.form-group.error input {
+  border-color: red;
+}

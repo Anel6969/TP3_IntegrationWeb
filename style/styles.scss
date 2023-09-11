@@ -1,0 +1,62 @@
+@import '_fontColors.scss';
+@import '_btn.scss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: $font-family_1;
+  font-size: 50px;
+  color: $color_1;
+}
+
+p {
+    fant-family: $font_family_1;
+    color: $color_2;
+}
+
+body {
+    background-color: rgb(233, 233, 233);
+}
+
+
+
+.monForm {
+	justify-content: space-around;
+	display: flex;
+	width: 400px;
+}
+.form-group {
+	
+	input {
+		border: 2px solid beige;
+		border-radius: 4px;
+		display: block;
+		font-size: 12px;
+		padding: 10px;
+		width: 400px;
+		&:focus {
+			outline: 0;
+		}
+	}
+	.errorMessage {
+		color: $color_3;
+		font-size: 14px;
+	}
+}
+.form-group.success {
+	input {
+		border-color: $border-color_1;
+	}
+}
+.form-group.error {
+	input {
+		border-color: $border-color_2;
+	}
+}
+
