@@ -6,7 +6,6 @@ const FILES_TO_CACHE = [
 
 self.addEventListener('install', (evt) => {
   console.log('[ServiceWorker] Install');
-  
 
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -14,10 +13,18 @@ self.addEventListener('install', (evt) => {
       return cache.addAll(FILES_TO_CACHE);
     })
   );
-  
-  
+
   self.skipWaiting();
 });
+
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'installPWA') {
+ 
+    event.source.postMessage({ type: 'installPWAConfirmed' });
+  }
+});
+
 
 
 self.addEventListener('activate', (evt) => {
