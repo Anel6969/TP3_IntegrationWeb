@@ -6,12 +6,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <meta name="apple-mobile-web-app-title" content="Centre TS">
     <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
     <meta name="description" content="Centre TS inc">
     <meta name="theme-color" content="rgb(233, 233, 233)" />
     <meta charset="UTF-8">
-    <meta name="description" content="L'allié de travailleurs">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style/css/normalize.css">
@@ -21,6 +20,7 @@
     <script src="/service-worker.js" defer></script>
     <title>Centre TS , L"allié de travailleurs</title>
 </head>
+
 
 <body>
     <header>
@@ -98,7 +98,7 @@
                                 propos nous</a>
                         </li>
                         <li>
-                            <button id="butInstall" aria-label="Install"  class=" hidden mr-4 hover:underline md:mr-6 ">Installer PWA</button>
+                            <button  id="butInstall" aria-label="Install" hidden class="bg-gray  mr-4 hover:underline md:mr-6 ">Installer l'application</button>
 
                         </li>
                     </ul>
@@ -121,12 +121,12 @@
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="images\shutterstock_1732967150.jpg"" class=" absolute block w-full -translate-x-1/2
+                    <img src="images/shutterstock_1732967150.jpg" class=" absolute block w-full -translate-x-1/2
                         -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="images/shutterstock_397846903.jpg"" class=" absolute block w-full -translate-x-1/2
+                    <img src="images/shutterstock_397846903.jpg" class=" absolute block w-full -translate-x-1/2
                         -translate-y-1/2 top-1/2 left-1/2" alt="...">
                 </div>
             </div>
@@ -319,9 +319,8 @@
                                 </defs>
                                 <rect fill="url(#d5589eeb-3fca-4f01-ac3e-983224745704)" width="52" height="24"></rect>
                             </svg>
-                            <h2 class="relative">LES</h2>
                         </span>
-                        CHIFFRES PARLENT D'EUX-MÊMES.
+                        LES CHIFFRES PARLENT D'EUX-MÊMES.
                     </h2>
                     <p>
                         Centre TS : 20+ années d'expertise. 100% satisfactions. Votre marque, notre engagement, reflétés
@@ -368,9 +367,16 @@
             </div>
         </section>
 
+ <!-- Separateur -->
+ <section>
+    <div class="relative flex py-10 items-center">
+        <div class="flex-grow border-t border-gray-400"></div>
+        <span class="flex-shrink mx-4 text-gray-400">↓↓↓ </span>
+        <div class="flex-grow border-t border-gray-400"></div>
+    </div>
+</section>
 
-
-        <footer>
+        
 
             <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
                 <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
@@ -403,7 +409,7 @@
             </footer>
 
 
-        </footer>
+        
     </main>
 
 
